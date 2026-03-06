@@ -1,0 +1,20 @@
+#include <string>
+#include <vector>
+
+using namespace std;
+
+int solution(vector<vector<int>> dots)
+{
+    int minX = dots[0][0], maxX = dots[0][0];
+    int minY = dots[0][1], maxY = dots[0][1];
+
+    for (auto& p : dots)
+    {
+        minX = min(minX, p[0]);
+        maxX = max(maxX, p[0]);
+        minY = min(minY, p[1]);
+        maxY = max(maxY, p[1]);
+    }
+
+    return (maxX - minX) * (maxY - minY);
+}

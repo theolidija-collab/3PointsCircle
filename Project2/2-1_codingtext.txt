@@ -1,0 +1,15 @@
+#include <string>
+#include <vector>
+
+using namespace std;
+
+int solution(int n, int k) {
+    int freeDrink = n / 10;
+    int paidDrink = k - freeDrink;
+
+    if (paidDrink < 0)
+        paidDrink = 0;
+
+    int total = (n * 12000) + (paidDrink * 2000);
+    return total;
+}
